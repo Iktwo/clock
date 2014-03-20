@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/qml">
+        <file>qml/main.qml</file>
+        <file>qml/AnalogClock.qml</file>
+        <file>qml/AnalogClockPage.qml</file>
+        <file>qml/SettingsPage.qml</file>
+        <file>qml/BinaryClock.qml</file>
+        <file>qml/BinaryClockPage.qml</file>
+        <file>qml/BinaryTower.qml</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file alias="seconds">resources/seconds.svg</file>
+        <file alias="minutes">resources/minutes.svg</file>
+        <file alias="moon">resources/moon.svg</file>
+        <file alias="sun">resources/sun.svg</file>
+        <file alias="minutes_dark">resources/minutes_dark.svg</file>
+        <file alias="settings">resources/settings.svg</file>
+        <file alias="settings_dark">resources/settings_dark.svg</file>
+    </qresource>
+</RCC>
