@@ -6,6 +6,25 @@ ApplicationWindow {
 
     /// TODO: saveLastTheme and lastView
     property bool darkTheme: true
+    property int dpi: Screen.pixelDensity * 25.4
+    function getBestIconSize(height) {
+        // 36,  48,  72,  96, 144, 192
+        // 42,  60,  84, 120, 168
+        if (height < 42)
+            return "ldpi/"
+        else if (height < 60)
+            return "mdpi/"
+        else if (height < 84)
+            return "hdpi/"
+        else if (height < 120)
+            return "xhdpi/"
+        else if (height < 168)
+            return "xxhdpi/"
+        else if (height < 216)
+            return "xxxhdpi/"
+        else
+            return ""
+    }
 
     width: 801
     height: 800

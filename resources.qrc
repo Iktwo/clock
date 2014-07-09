@@ -7,14 +7,36 @@
         <file>qml/BinaryClock.qml</file>
         <file>qml/BinaryClockPage.qml</file>
         <file>qml/BinaryTower.qml</file>
+        <file>qml/SettingsButton.qml</file>
+        <file>qml/TextSwitch.qml</file>
+        <file>qml/style.js</file>
     </qresource>
     <qresource prefix="/images">
-        <file alias="seconds">resources/seconds.svg</file>
-        <file alias="minutes">resources/minutes.svg</file>
-        <file alias="moon">resources/moon.svg</file>
-        <file alias="sun">resources/sun.svg</file>
-        <file alias="minutes_dark">resources/minutes_dark.svg</file>
-        <file alias="settings">resources/settings.svg</file>
-        <file alias="settings_dark">resources/settings_dark.svg</file>
+        <file alias="settings">resources/images/settings.svg</file>
+        <file alias="settings_dark">resources/images/settings_dark.svg</file>
+    </qresource>
+    <qresource prefix="/images/ldpi">
+        <file alias="settings">resources/images/drawable-ldpi/settings.png</file>
+        <file alias="settings_dark">resources/images/drawable-ldpi/settings_dark.png</file>
+    </qresource>
+    <qresource prefix="/images/mdpi">
+        <file alias="settings">resources/images/drawable-mdpi/settings.png</file>
+        <file alias="settings_dark">resources/images/drawable-mdpi/settings_dark.png</file>
+    </qresource>
+    <qresource prefix="/images/hdpi">
+        <file alias="settings">resources/images/drawable-hdpi/settings.png</file>
+        <file alias="settings_dark">resources/images/drawable-hdpi/settings_dark.png</file>
+    </qresource>
+    <qresource prefix="/images/xhdpi">
+        <file alias="settings">resources/images/drawable-xhdpi/settings.png</file>
+        <file alias="settings_dark">resources/images/drawable-xhdpi/settings_dark.png</file>
+    </qresource>
+    <qresource prefix="/images/xxhdpi">
+        <file alias="settings">resources/images/drawable-xxhdpi/settings.png</file>
+        <file alias="settings_dark">resources/images/drawable-xxhdpi/settings_dark.png</file>
+    </qresource>
+    <qresource prefix="/images/xxxhdpi">
+        <file alias="settings">resources/images/drawable-xxxhdpi/settings.png</file>
+        <file alias="settings_dark">resources/images/drawable-xxxhdpi/settings_dark.png</file>
     </qresource>
 </RCC>

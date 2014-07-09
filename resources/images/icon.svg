@@ -15,10 +15,10 @@
    id="svg4368"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="clock.svg"
-   inkscape:export-filename="/run/media/iktwo/Kali Live/clock/resources/512x512-clock.png"
-   inkscape:export-xdpi="90.000664"
-   inkscape:export-ydpi="90.000664">
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="/home/iktwo/devel/clock/resources/images/512x512-clock.png"
+   inkscape:export-xdpi="90.000023"
+   inkscape:export-ydpi="90.000023">
   <defs
      id="defs4370">
     <linearGradient
@@ -52,7 +52,7 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="0"
      inkscape:zoom="0.96166522"
-     inkscape:cx="378.52281"
+     inkscape:cx="380.60254"
      inkscape:cy="308.75807"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -85,7 +85,7 @@
      transform="translate(-6.7022458e-5,-540.36225)">
     <path
        sodipodi:type="arc"
-       style="fill:#000000;fill-opacity:1;stroke:#ceced0;stroke-width:14.50060271999999983;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#000000;fill-opacity:1;stroke:#ceced0;stroke-width:6.37589631;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="path4376"
        sodipodi:cx="519.11768"
        sodipodi:cy="759.71515"
