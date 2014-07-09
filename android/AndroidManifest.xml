@@ -1,5 +1,5 @@
-<?xml version='1.0' encoding='utf-8'?>
-<manifest android:versionCode="5" android:installLocation="auto" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="0.2" package="com.iktwo.time">
+<?xml version="1.0"?>
+<manifest android:versionCode="6" android:installLocation="auto" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="0.3" package="com.iktwo.time">
     <application android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="Time" android:icon="@drawable/icon">
         <activity android:name="org.qtproject.qt5.android.bindings.QtActivity" android:label="Time" android:screenOrientation="unspecified" android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|locale|fontScale|keyboard|keyboardHidden|navigation">
             <intent-filter>
@@ -31,6 +31,6 @@
             <!-- Splash screen -->
         </activity>
     </application>
-    <uses-sdk android:targetSdkVersion="14" android:minSdkVersion="14"/>
+    <uses-sdk android:targetSdkVersion="20" android:minSdkVersion="14"/>
     <supports-screens android:normalScreens="true" android:smallScreens="true" android:largeScreens="true" android:anyDensity="true"/>
 </manifest>
