@@ -7,13 +7,11 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-
         color: darkTheme ? "#000000" : "#ECF0F1"
     }
 
     Connections {
         target: appWindow
-
         onDarkThemeChanged: clock.requestPaint()
     }
 
@@ -24,7 +22,6 @@ Item {
         }
 
         color: darkTheme ? "#ECF0F1" : "#000000"
-
         text: qsTr("Analog")
         visible: display
     }
@@ -36,26 +33,10 @@ Item {
         anchors.centerIn: parent
     }
 
-    Image {
+    SettingsButton {
         anchors {
-            right: parent.right; rightMargin: 10
-            bottom: parent.bottom; bottomMargin: 10
-        }
-
-        height: parent.height / 8
-        width: parent.width / 8
-        fillMode: Image.PreserveAspectFit
-        smooth: true
-        antialiasing: true
-        visible: !display
-
-        source: darkTheme ? "qrc:/images/settings_dark" : "qrc:/images/settings"
-
-        MouseArea {
-            anchors.fill: parent
-            enabled: parent.visible
-
-            onClicked: stackView.push(settingsPage)
+            right: parent.right; rightMargin: dpi * 0.04
+            bottom: parent.bottom; bottomMargin: dpi * 0.04
         }
     }
 }

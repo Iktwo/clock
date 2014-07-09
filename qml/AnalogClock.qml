@@ -13,7 +13,7 @@ Canvas {
     property real radius: center.x
     property var colors: ["#B4D137", "#90C24F", "#EA9440", "#3AADD9", "#FF6E01"]
     property var backgrounds: ["#E5E6E8", "#DDDDDD", "#F0F0F0", "#4B4B4B"]
-    property var paintNumbers: [1,1,1,1,1,1,1,1,1,1,1,1]
+    property var paintNumbers: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     //[1,0,0,0,0,0,0,0,0,0,0,0]
 
     property color mainColor: colors[3]
@@ -21,7 +21,6 @@ Canvas {
     property var date: new Date()
 
     property int outerCircleWidth: radius / 22
-
     property int numbersHeight: Math.max(1, height / 20)
 
     width: Math.min(parent.width, parent.height) * 0.85
@@ -104,7 +103,7 @@ Canvas {
 
         degree = (date.getMinutes() * 360) / 60
         minutesRotation.angle = degree
-        minutesRotation2.angle = degree
+//        minutesRotation2.angle = degree
 
         // angle = (degree - 90) * (Math.PI / 180)
         // x = center.x + (radius * 0.75) * Math.cos(angle)
@@ -117,7 +116,7 @@ Canvas {
         degree = (date.getSeconds() * 360) / 60
         secondsRotation.angle = degree
 
-        secondsRotation2.angle = degree
+//        secondsRotation2.angle = degree
     }
 
     //    Rectangle {
@@ -198,52 +197,53 @@ Canvas {
         }
     }
 
-    Image {
-        id: minutesHandle
-        property int yOffset: (parent.radius * 0.85) * 0.15
+//    Image {
+//        id: minutesHandle
 
-        source: darkTheme ? "qrc:/images/minutes_dark" : "qrc:/images/minutes"
+//        property int yOffset: (parent.radius * 0.85) * 0.15
 
-        height: parent.height / 2.25
-        visible: false
+//        source: darkTheme ? "qrc:/images/minutes_dark" : "qrc:/images/minutes"
 
-        x: center.x - (width / 2)
-        y: center.y - height + yOffset
-        smooth: true
-        antialiasing: true
+//        height: parent.height / 2.25
+//        visible: false
 
-        transform: Rotation {
-            id: minutesRotation2
+//        x: center.x - (width / 2)
+//        y: center.y - height + yOffset
+//        smooth: true
+//        antialiasing: true
 
-            origin.x: minutesHandle.width / 2
-            origin.y: minutesHandle.height - minutesHandle.yOffset
+//        transform: Rotation {
+//            id: minutesRotation2
 
-            Behavior on angle { RotationAnimation {  duration: 100; direction: RotationAnimation.Shortest } }
-        }
-    }
+//            origin.x: minutesHandle.width / 2
+//            origin.y: minutesHandle.height - minutesHandle.yOffset
 
-    Image {
-        id: secondsHandle
-        property int yOffset: (parent.radius * 1) * 0.25
+//            Behavior on angle { RotationAnimation {  duration: 100; direction: RotationAnimation.Shortest } }
+//        }
+//    }
 
-        source: "qrc:/images/seconds"
-        height: parent.height / 1.8
-        visible: false
+//    Image {
+//        id: secondsHandle
+//        property int yOffset: (parent.radius * 1) * 0.25
 
-        x: center.x - (width / 2)
-        y: center.y - height + yOffset
-        smooth: true
-        antialiasing: true
+//        source: "qrc:/images/seconds"
+//        height: parent.height / 1.8
+//        visible: false
 
-        transform: Rotation {
-            id: secondsRotation2
+//        x: center.x - (width / 2)
+//        y: center.y - height + yOffset
+//        smooth: true
+//        antialiasing: true
 
-            origin.x: secondsHandle.width / 2
-            origin.y: secondsHandle.height - secondsHandle.yOffset
+//        transform: Rotation {
+//            id: secondsRotation2
 
-            Behavior on angle { RotationAnimation {  duration: 100; direction: RotationAnimation.Shortest } }
-        }
-    }
+//            origin.x: secondsHandle.width / 2
+//            origin.y: secondsHandle.height - secondsHandle.yOffset
+
+//            Behavior on angle { RotationAnimation {  duration: 100; direction: RotationAnimation.Shortest } }
+//        }
+//    }
 
 //    MouseArea {
 //        anchors.fill: parent

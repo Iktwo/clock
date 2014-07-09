@@ -1,35 +1,41 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.1
+import QtQuick.Layouts 1.1
+import "style.js" as Style
 
-Item {
+Rectangle {
     property var date: new Date()
 
-    Rectangle {
-        anchors.fill: parent
+    color: darkTheme ? "#000000" : "#ECF0F1"
 
-        color: darkTheme ? "#000000" : "#ECF0F1"
-    }
+    Column {
+        id: container
 
-    Image {
-        id: lightDark
+        property int targetHeight: parent.height / 6
 
-        anchors {
-            left: parent.left; leftMargin: 10
-            top: parent.top; topMargin: 10
+        width: parent.width / 2
+        anchors.top: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        Label {
+            id: label
+            color: darkTheme ? Style.LIGHT_TEXT : Style.DARK_TEXT
+            text: qsTr("Dark theme")
+            font.pixelSize: container.targetHeight / 6
+            fontSizeMode: Text.Fit
+            height: container.targetHeight / 6
+            width: parent.width
+            horizontalAlignment: "AlignHCenter"
         }
 
-        height: parent.height / 8
-        width: parent.width / 8
-        fillMode: Image.PreserveAspectFit
-        smooth: true
-        antialiasing: true
+        TextSwitch {
+            id: txt
+            active: clock.darkTheme
+            pixelSize: height
+            height: (container.targetHeight / 6) * 5
+            width: parent.width
 
-        source: darkTheme ? "qrc:/images/sun" : "qrc:/images/moon"
-
-        MouseArea {
-            anchors.fill: parent
-
-            onClicked: darkTheme = !darkTheme
+            onActiveChanged: clock.darkTheme = active
         }
     }
 
@@ -37,16 +43,13 @@ Item {
         id: view
 
         anchors {
-            top: lightDark.bottom
+            top: container.bottom
             left: parent.left
             right: parent.right
             bottom: backButton.top
         }
 
-        //        clip: true
-
         orientation: ListView.Horizontal
-
         snapMode: ListView.SnapOneItem
 
         model: ListModel {
@@ -64,7 +67,6 @@ Item {
         delegate: Loader {
             height: view.height
             width: view.width
-
             source: element
 
             MouseArea {
@@ -77,6 +79,8 @@ Item {
                         stackView.replace({item: binaryClock, immediate: true})
                     else if (name == "Analog")
                         stackView.replace({item: analogClock, immediate: true})
+
+                    clock.watchFace = name
                 }
             }
         }
@@ -91,7 +95,6 @@ Item {
         }
 
         text: "Back"
-
         onClicked: stackView.pop()
     }
 }

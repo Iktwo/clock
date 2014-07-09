@@ -1,12 +1,14 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.1
+import QtQuick.Window 2.1
 
 ApplicationWindow {
     id: appWindow
 
     /// TODO: saveLastTheme and lastView
-    property bool darkTheme: true
+    property bool darkTheme: clock.darkTheme
     property int dpi: Screen.pixelDensity * 25.4
+
     function getBestIconSize(height) {
         // 36,  48,  72,  96, 144, 192
         // 42,  60,  84, 120, 168
@@ -26,32 +28,29 @@ ApplicationWindow {
             return ""
     }
 
-    width: 801
+    width: 800
     height: 800
+    visible: true
 
     StackView {
         id: stackView
 
         anchors.fill: parent
-
-        initialItem: analogClock
+        initialItem: clock.watchFace === "BCD" ? binaryClock : analogClock
     }
 
-    AnalogClockPage {
+    Component {
         id: analogClock
-
-        display: false
+        AnalogClockPage { display: false }
     }
 
-    SettingsPage {
+    Component {
         id: settingsPage
-
-        clip: true
+        SettingsPage { clip: true }
     }
 
-    BinaryClockPage {
+    Component {
         id: binaryClock
-
-        display: false
+        BinaryClockPage { display: false }
     }
 }
